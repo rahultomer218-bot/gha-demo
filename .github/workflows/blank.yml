@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: :Hello Step
-        run: echo "Welcome to Git Hub Actions"
+        run:  |
+         echo "This is line 1"
+         echo "This is line 2"
         
   
