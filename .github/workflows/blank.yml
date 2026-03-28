@@ -1,5 +1,13 @@
 name: Hello World
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - release/*
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
