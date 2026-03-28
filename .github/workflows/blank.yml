@@ -1,6 +1,9 @@
 name: Hello World
-on: workflow_dispatch
-
+on: push:
+  branches: 
+    - main
+    - develop
+    - release/*
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,3 +22,6 @@ jobs:
     steps:
       - name: Deploy the app
         run: echo "Deploy the App"
+        
+        
+
