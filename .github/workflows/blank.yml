@@ -1,9 +1,14 @@
 name: Hello World
-on: push:
-  branches: 
-    - main
-    - develop
-    - release/*
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - release/*
+  pull_request:
+    branches:
+      - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,6 +27,3 @@ jobs:
     steps:
       - name: Deploy the app
         run: echo "Deploy the App"
-        
-        
-
