@@ -1,0 +1,22 @@
+name: Deploy Static HTML to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # Step 1: Repository ka code checkout karo
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 2: index.html ko GitHub Pages pe deploy karo
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
