@@ -4,17 +4,17 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-
-      # Step 1: Repository ka code checkout karo
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Step 2: index.html ko GitHub Pages pe deploy karo
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
